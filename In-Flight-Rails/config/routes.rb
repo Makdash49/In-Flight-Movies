@@ -4,8 +4,10 @@ Rails.application.routes.draw do
 
   resources :flights
 
+  resources :users
+
   # You can have the root of your site routed with "root"
-  root 'flights#index'
+  root 'users#new'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
