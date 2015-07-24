@@ -12,7 +12,13 @@
       <%= f.submit "What is your flight number?", class: "btn btn-primary" %>
     <% end %>
   </div>
-</div>
+</div><br>
+
+
+
+<% @flights.each do |flight| %>
+<li><%= flight.number %></li>
+<% end %>
 
 
 <% if @flight %>
@@ -21,6 +27,57 @@
 	<p>Minutes: <%= @flight.minutes %></p>
 	<p>Origin: <%= @flight.origin %></p>
 	<p>Destination: <%= @flight.destination %></p>
+
+	<h3> What movie genres do you like?</h3>
+
+
+	<%= form_for(@user) do |f| %>
+
+		<p>
+			<%= check_box_tag(:drama, 1, @user.drama) %>
+			<%= label_tag(:drama, "Drama") %>
+		</p>
+		<p>
+			<%= check_box_tag(:romance, 1, @user.romance) %>
+			<%= label_tag(:romance, "Romance") %>
+		</p>
+
+
+		<p>
+			<%= check_box_tag(:comedy, 1, @user.comedy) %>
+			<%= label_tag(:comedy, "Comedy") %>
+		</p>
+
+		<%= f.hidden_field :flight, :value => @user.flight%>
+
+      <%= f.submit "Submit", class: "btn btn-primary" %>
+    <% end %>
+
+    <% if @user.drama == true || @user.romance == true || @user.comedy == true %>
+
+	    <p>You selected:  </p>
+
+	    <% if @user.drama == true %>
+	    	Drama
+	    <% end %>
+
+	    <% if @user.romance == true %>
+	    	Romance
+	    <% end %>
+
+	    <% if @user.comedy == true %>
+	    	Comedy
+	    <% end %>
+
+	   <% end %>
+
+
+
+
+
+
+
+
 <% else %>
 	<h1>Enter a Valid Flight Number</h1>
-	<% end %>
+<% end %>
