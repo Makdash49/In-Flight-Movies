@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150724034548) do
+ActiveRecord::Schema.define(version: 20150724042925) do
 
   create_table "flights", force: :cascade do |t|
     t.integer  "number"
@@ -20,6 +20,19 @@ ActiveRecord::Schema.define(version: 20150724034548) do
     t.string   "destination"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "flight"
+    t.boolean  "comedy"
+    t.boolean  "action"
+    t.boolean  "romance"
+    t.boolean  "drama"
+    t.boolean  "horror"
+    t.boolean  "period"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
