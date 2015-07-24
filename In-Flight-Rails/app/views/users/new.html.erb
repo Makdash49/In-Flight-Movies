@@ -34,8 +34,8 @@
 	<%= form_for(@user) do |f| %>
 
 		<p>
-			<%= check_box_tag(:drama, 1, @user.drama) %>
-			<%= label_tag(:drama, "Drama") %>
+			<%= check_box_tag(:aaction, 1, @user.aaction) %>
+			<%= label_tag(:aaction, "Action") %>
 		</p>
 		<p>
 			<%= check_box_tag(:romance, 1, @user.romance) %>
@@ -53,12 +53,12 @@
       <%= f.submit "Submit", class: "btn btn-primary" %>
     <% end %>
 
-    <% if @user.drama == true || @user.romance == true || @user.comedy == true %>
+    <% if @user.aaction == true || @user.romance == true || @user.comedy == true %>
 
 	    <p>You selected:  </p>
 
-	    <% if @user.drama == true %>
-	    	Drama
+	    <% if @user.aaction == true %>
+	    	Action
 	    <% end %>
 
 	    <% if @user.romance == true %>

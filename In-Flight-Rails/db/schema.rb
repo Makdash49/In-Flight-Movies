@@ -25,12 +25,9 @@ ActiveRecord::Schema.define(version: 20150724042925) do
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.integer  "flight"
+    t.boolean  "aaction"
     t.boolean  "comedy"
-    t.boolean  "action"
     t.boolean  "romance"
-    t.boolean  "drama"
-    t.boolean  "horror"
-    t.boolean  "period"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

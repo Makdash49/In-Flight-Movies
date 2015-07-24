@@ -20,7 +20,7 @@ def update
 	@flights = Flight.all
 
 	@user.flight = params[:user][:flight]
-	@user.drama = params[:drama]
+	@user.aaction = params[:aaction]
 	@user.romance = params[:romance]
 	@user.comedy = params[:comedy]
 	@user.save
