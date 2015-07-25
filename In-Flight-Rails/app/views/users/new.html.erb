@@ -1,55 +1,60 @@
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@user) do |f| %>
-      <%= "Flight Number:" %>
-      <%= f.number_field :flight %>
-
-
-      <%= f.submit "Submit", class: "btn btn-primary" %>
-    <% end %>
-  </div>
-</div><br>
-
-<% if @flight %>
-	<h1>Flight Info:</h1>
-	<p>Number: <%= @flight.number %></p>
-	<p>Minutes: <%= @flight.minutes %></p>
+<div class="container">
 	<br>
-<!-- 	<p>Origin: <%= @flight.origin %></p>
-	<p>Destination: <%= @flight.destination %></p> -->
-
-	<h3> What movie genres are you in the mood for?</h3>
-
-
-	<%= form_for(@user) do |f| %>
-
-		<p>
-			<%= check_box_tag(:aaction, 1, @user.aaction) %>
-			<%= label_tag(:aaction, "Action") %>
-		</p>
-		<p>
-			<%= check_box_tag(:romance, 1, @user.romance) %>
-			<%= label_tag(:romance, "Romance") %>
-		</p>
+	<div class="row">
+	  <div class="col-md-6 col-md-offset-3">
+	    <%= form_for(@user) do |f| %>
+	      <%= "Flight Number:" %>
+	      <%= f.number_field :flight %>
 
 
-		<p>
-			<%= check_box_tag(:comedy, 1, @user.comedy) %>
-			<%= label_tag(:comedy, "Comedy") %>
-		</p>
+	      <%= f.submit "Submit", class: "btn btn-primary" %>
+	    <% end %>
+	  </div>
+	</div><br>
 
-		<%= f.hidden_field :flight, :value => @user.flight%>
+	<% if @flight %>
+		<h3>Flight Info:</h3>
+		<p>Number: <%= @flight.number %></p>
+		<p>Minutes: <%= @flight.minutes %></p>
+		<br>
+	<!-- 	<p>Origin: <%= @flight.origin %></p>
+		<p>Destination: <%= @flight.destination %></p> -->
 
-      <%= f.submit "Submit", class: "btn btn-primary" %>
-    <% end %>
-
-	  <% if @common %>
-		  <% @common.each do |movie| %>
-		  	<p><%= movie.title %></p>
-		  <% end %>
-		<% end %>
+		<h3> What movie genres are you in the mood for?</h3>
 
 
-<% else %>
-	<h3>Enter a Valid Flight Number</h3>
-<% end %>
+		<%= form_for(@user) do |f| %>
+
+			<p>
+				<%= check_box_tag(:aaction, 1, @user.aaction) %>
+				<%= label_tag(:aaction, "Action") %>
+			</p>
+			<p>
+				<%= check_box_tag(:romance, 1, @user.romance) %>
+				<%= label_tag(:romance, "Romance") %>
+			</p>
+
+
+			<p>
+				<%= check_box_tag(:comedy, 1, @user.comedy) %>
+				<%= label_tag(:comedy, "Comedy") %>
+			</p>
+
+			<%= f.hidden_field :flight, :value => @user.flight%>
+
+	      <%= f.submit "Submit", class: "btn btn-primary" %>
+	    <% end %>
+	    <br>
+
+		  <h3>Movie Recommendation:</h3>
+		  <% if @common %>
+			  <% @common.each do |movie| %>
+			  	<p><%= movie.title %></p>
+			  <% end %>
+			<% end %>
+
+
+	<% else %>
+		<h3>Enter a Valid Flight Number</h3>
+	<% end %>
+</div>
