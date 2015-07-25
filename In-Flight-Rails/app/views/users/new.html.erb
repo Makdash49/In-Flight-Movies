@@ -69,7 +69,13 @@
 	    	Comedy
 	    <% end %>
 
-	   <% end %>
+	  <% end %>
+
+	  <% if @common %>
+		  <% @common.each do |movie| %>
+		  	<p><%= movie.title %></p>
+		  <% end %>
+		<% end %>
 
 
 
