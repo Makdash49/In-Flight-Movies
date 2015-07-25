@@ -1,34 +1,24 @@
-<p>What is your flight number?</p>
-
-
-
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@user) do |f| %>
-      <%= f.label :flight %>
+      <%= "Flight Number:" %>
       <%= f.number_field :flight %>
 
 
-      <%= f.submit "What is your flight number?", class: "btn btn-primary" %>
+      <%= f.submit "Submit", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div><br>
 
-
-
-<% @flights.each do |flight| %>
-<li><%= flight.number %></li>
-<% end %>
-
-
 <% if @flight %>
-	<h1>Here is your flight Info</h1>
+	<h1>Flight Info:</h1>
 	<p>Number: <%= @flight.number %></p>
 	<p>Minutes: <%= @flight.minutes %></p>
-	<p>Origin: <%= @flight.origin %></p>
-	<p>Destination: <%= @flight.destination %></p>
+	<br>
+<!-- 	<p>Origin: <%= @flight.origin %></p>
+	<p>Destination: <%= @flight.destination %></p> -->
 
-	<h3> What movie genres do you like?</h3>
+	<h3> What movie genres are you in the mood for?</h3>
 
 
 	<%= form_for(@user) do |f| %>
@@ -60,12 +50,6 @@
 		<% end %>
 
 
-
-
-
-
-
-
 <% else %>
-	<h1>Enter a Valid Flight Number</h1>
+	<h3>Enter a Valid Flight Number</h3>
 <% end %>

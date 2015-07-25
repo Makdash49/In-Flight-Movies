@@ -11,10 +11,10 @@
 # 	        created_at: datetime, updated_at: datetime)
 
 
-Flight.create(number: 123, minutes: 180, origin: "Chicago", destination: "Oahu")
-Flight.create(number: 345, minutes: 500, origin: "Vancouver", destination: "Reno")
-Flight.create(number: 678, minutes: 250, origin: "Omaha", destination: "Boston")
-Flight.create(number: 910, minutes: 300, origin: "Anchorage", destination: "Philadelphia")
+Flight.create(number: 1, minutes: 60, origin: "San Francisco", destination: "San Diego")
+Flight.create(number: 2, minutes: 150, origin: "San Francisco", destination: "Dallas")
+Flight.create(number: 3, minutes: 200, origin: "San Francisco", destination: "Toledo")
+Flight.create(number: 4, minutes: 250, origin: "San Francisco", destination: "Boston")
 
 
 
