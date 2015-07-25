@@ -53,24 +53,6 @@
       <%= f.submit "Submit", class: "btn btn-primary" %>
     <% end %>
 
-    <% if @user.aaction == true || @user.romance == true || @user.comedy == true %>
-
-	    <p>You selected:  </p>
-
-	    <% if @user.aaction == true %>
-	    	Action
-	    <% end %>
-
-	    <% if @user.romance == true %>
-	    	Romance
-	    <% end %>
-
-	    <% if @user.comedy == true %>
-	    	Comedy
-	    <% end %>
-
-	  <% end %>
-
 	  <% if @common %>
 		  <% @common.each do |movie| %>
 		  	<p><%= movie.title %></p>

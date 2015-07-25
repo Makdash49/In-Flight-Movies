@@ -37,17 +37,17 @@ def update
 	if @user.aaction == true && @user.comedy == true && @user.romance == true
 		@common = actions & comedies & romances
 	elsif @user.aaction == true && @user.comedy == true && @user.romance == nil
-		@common = actions & comedies
+		@common = actions - romances & comedies
 	elsif @user.aaction == nil && @user.comedy == true && @user.romance == true
-		@common = comedies & romances
+		@common = comedies - actions & romances
 	elsif @user.aaction == true && @user.comedy == nil && @user.romance == true
-		@common = actions & romances
+		@common = actions - comedies & romances
 	elsif @user.aaction == true && @user.comedy == nil && @user.romance == nil
-		@common = actions
+		@common = actions - comedies - romances
 	elsif @user.aaction == nil && @user.comedy == true && @user.romance == nil
-		@common = comedies
+		@common = comedies - actions - romances
 	elsif @user.aaction == nil && @user.comedy == nil && @user.romance == true
-		@common = romances
+		@common = romances - actions - comedies
 	end
 
 	@flight = Flight.where(number: @user.flight).first
