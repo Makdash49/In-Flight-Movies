@@ -48,12 +48,14 @@ ActiveRecord::Schema.define(version: 20150725025237) do
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
-    t.integer  "flight"
+    t.integer  "flight_id"
     t.boolean  "aaction"
     t.boolean  "comedy"
     t.boolean  "romance"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "users", ["flight_id"], name: "index_users_on_flight_id"
 
 end

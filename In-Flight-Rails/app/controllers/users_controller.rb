@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 	def create
 		@user = User.create(user_params)
 		@flights = Flight.all
-		@flight = Flight.where(number: @user.flight).first
+		@flight = @user.flight
 		render 'new'
 	end
 
@@ -19,7 +19,7 @@ def update
 	@user = User.find(params[:id])
 	@flights = Flight.all
 
-	@user.flight = params[:user][:flight]
+	@user.flight_id = params[:user][:flight_id]
 	@user.aaction = params[:aaction]
 	@user.romance = params[:romance]
 	@user.comedy = params[:comedy]
@@ -50,14 +50,14 @@ def update
 		@common = romances - actions - comedies
 	end
 
-	@flight = Flight.where(number: @user.flight).first
+	@flight = @user.flight
 	render 'new'
 end
 
   private
 
     def user_params
-      params.require(:user).permit(:flight)
+      params.require(:user).permit(:flight_id)
     end
 
 
