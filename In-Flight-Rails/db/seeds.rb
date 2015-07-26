@@ -14,7 +14,7 @@
 Flight.create(number: 1, minutes: 60, origin: "San Francisco", destination: "San Diego")
 Flight.create(number: 2, minutes: 150, origin: "San Francisco", destination: "Dallas")
 Flight.create(number: 3, minutes: 200, origin: "San Francisco", destination: "Toledo")
-Flight.create(number: 4, minutes: 250, origin: "San Francisco", destination: "Boston")
+Flight.create(number: 4, minutes: 300, origin: "San Francisco", destination: "Boston")
 
 
 

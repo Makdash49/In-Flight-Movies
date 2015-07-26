@@ -30,6 +30,12 @@ def update
 	if @user.aaction == true && @user.comedy == true && @user.romance == true
 		special = actions & comedies & romances
 		@common = special.select {|movie| movie.minutes < @user.flight.minutes }
+
+		# subtract movie minutes from flight if there are enough to.  Then see if there is 
+		# another movie that meets the criteria that fits the time.
+
+
+
 	elsif @user.aaction == true && @user.comedy == true && @user.romance == nil
 		@common = actions - romances & comedies
 	elsif @user.aaction == nil && @user.comedy == true && @user.romance == true
