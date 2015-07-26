@@ -14,8 +14,6 @@ class UsersController < ApplicationController
 
 
 def update
-	p "*" * 100
-	p params
 	@user = User.find(params[:id])
 	@flights = Flight.all
 
@@ -29,13 +27,9 @@ def update
 	comedies = Genre.find(2).movies
 	romances = Genre.find(3).movies
 
-	p "&" * 100
-	p @user.aaction
-	p @user.romance
-	p @user.comedy
-
 	if @user.aaction == true && @user.comedy == true && @user.romance == true
-		@common = actions & comedies & romances
+		special = actions & comedies & romances
+		@common = special.select {|movie| movie.minutes < @user.flight.minutes }
 	elsif @user.aaction == true && @user.comedy == true && @user.romance == nil
 		@common = actions - romances & comedies
 	elsif @user.aaction == nil && @user.comedy == true && @user.romance == true

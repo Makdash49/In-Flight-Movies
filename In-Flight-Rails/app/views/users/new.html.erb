@@ -49,6 +49,9 @@
 			  <% @common.each do |movie| %>
 			  	<p><%= movie.title %></p>
 			  <% end %>
+			  <% if @common.empty? %>
+			  	<p>This flight is too short for a movie!</p>
+			  <% end %>
 			<% end %>
 
 
