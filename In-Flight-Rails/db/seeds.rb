@@ -23,13 +23,13 @@ comedy = Genre.create(name: "Comedy")
 romance = Genre.create(name: "Romance")
 
 
-raiders = Movie.create(title: "Raiders of the Lost Ark")
-view = Movie.create(title: "A Room with a View")
-brian = Movie.create(title: "The Life of Brian")
-romancing = Movie.create(title: "Romancing the Stone")
-spies = Movie.create(title: "Spies Like Us")
-mary = Movie.create(title: "There's Something About Mary")
-lies = Movie.create(title: "True Lies")
+raiders = Movie.create(title: "Raiders of the Lost Ark", minutes: 115)
+view = Movie.create(title: "A Room with a View", minutes: 117)
+brian = Movie.create(title: "The Life of Brian", minutes: 94)
+romancing = Movie.create(title: "Romancing the Stone", minutes: 106)
+spies = Movie.create(title: "Spies Like Us", minutes: 102)
+mary = Movie.create(title: "There's Something About Mary", minutes: 119)
+lies = Movie.create(title: "True Lies", minutes: 141)
 
 
 raiders.genres << action
