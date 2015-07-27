@@ -45,13 +45,20 @@
 	    <br>
 
 		  <h3>Movie Recommendation:</h3>
-		  <% if @first_recom %>
-			  <% @first_recom.each do |movie| %>
+		  <% if @recom %>
+			  <% @recom.each do |movie| %>
 			  	<p><%= movie.title %></p>
 			  <% end %>
-			  <% if @first_recom.empty? %>
+			  <% if @recom.empty? %>
 			  	<p>This flight is too short for a movie!</p>
 			  <% end %>
+			<% end %>
+
+			<% if @movie_fit %>
+			<h3>These movies fit the flight</h3>
+				<% @movie_fit.each do |movie| %>
+					<p><%= movie.title + " " + movie.minutes.to_s %></p>
+				<% end %>
 			<% end %>
 
 
