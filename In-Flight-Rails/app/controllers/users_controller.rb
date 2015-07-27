@@ -32,17 +32,29 @@ def update
 		@first_recom = special.select {|movie| movie.minutes < @user.flight.minutes }
 
 	elsif @user.aaction == true && @user.comedy == true && @user.romance == nil
-		@first_recom = actions - romances & comedies
+		special = actions - romances & comedies
+		@first_recom = special.select {|movie| movie.minutes < @user.flight.minutes }
+
 	elsif @user.aaction == nil && @user.comedy == true && @user.romance == true
-		@first_recom = comedies - actions & romances
+		special = comedies - actions & romances
+		@first_recom = special.select {|movie| movie.minutes < @user.flight.minutes }
+
 	elsif @user.aaction == true && @user.comedy == nil && @user.romance == true
-		@first_recom = actions - comedies & romances
+		special = actions - comedies & romances
+		@first_recom = special.select {|movie| movie.minutes < @user.flight.minutes }
+
 	elsif @user.aaction == true && @user.comedy == nil && @user.romance == nil
-		@first_recom = actions - comedies - romances
+		special = actions - comedies - romances
+		@first_recom = special.select {|movie| movie.minutes < @user.flight.minutes }
+
 	elsif @user.aaction == nil && @user.comedy == true && @user.romance == nil
-		@first_recom = comedies - actions - romances
+		special = comedies - actions - romances
+		@first_recom = special.select {|movie| movie.minutes < @user.flight.minutes }
+
 	elsif @user.aaction == nil && @user.comedy == nil && @user.romance == true
-		@first_recom = romances - actions - comedies
+		special = romances - actions - comedies
+		@first_recom = special.select {|movie| movie.minutes < @user.flight.minutes }
+
 	end
 
 	@flight = @user.flight
