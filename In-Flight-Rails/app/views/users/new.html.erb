@@ -56,9 +56,12 @@
 			<br>
 
 			<% if @movie_fit %>
-			<h4>* Fill up your flight time as much as possible by watching:</h4>
+			<h4>* Fill your flight time as much as possible by watching:</h4>
 				<% @movie_fit.each do |movie| %>
 					<p><%= movie.title + ", " + movie.minutes.to_s + " minutes" %></p>
+				<% end %>
+				<% if @movie_fit.length > 1 %>
+					<%= "Total: " + @total_sum.to_s + " minutes" %>
 				<% end %>
 			<% end %>
 

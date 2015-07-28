@@ -27,6 +27,7 @@ module UsersHelper
 		end
 		if index_of_winner != nil
 			@movie_fit = array_of_arrays[index_of_winner]
+			@total_sum = top_sum
 		end
 	end
 
