@@ -2,8 +2,6 @@ class UsersController < ApplicationController
 
 	include UsersHelper
 
-	# test
-
 	def new
 		@user = User.new
 		@flights = Flight.all
