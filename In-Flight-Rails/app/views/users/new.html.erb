@@ -53,11 +53,12 @@
 			  	<p>This flight is too short for a movie!</p>
 			  <% end %>
 			<% end %>
+			<br>
 
 			<% if @movie_fit %>
-			<h3>These movies fit the flight</h3>
+			<h4>* Fill up your flight time as much as possible by watching:</h4>
 				<% @movie_fit.each do |movie| %>
-					<p><%= movie.title + " " + movie.minutes.to_s %></p>
+					<p><%= movie.title + ", " + movie.minutes.to_s + " minutes" %></p>
 				<% end %>
 			<% end %>
 
